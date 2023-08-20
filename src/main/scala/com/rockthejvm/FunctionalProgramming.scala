@@ -20,12 +20,12 @@ object FunctionalProgramming extends App {
   Conclution: FunctionX = Function1, Function2, ... Function22
    */
 
-  val simpleInstrumenter = new Function1[Int, Int] {
+  val simpleIncrementer = new Function1[Int, Int] {
     override def apply(arg: Int): Int = arg + 1
   }
 
-  simpleInstrumenter.apply(23)
-  simpleInstrumenter(23) //simpleInstrumenter.apply(23)
+  simpleIncrementer.apply(23)
+  simpleIncrementer(23) //simpleIncrementer.apply(23)
   //we basically defined a function
 
   //ALL SCALA FUNCTIONS ARE INSTANCES OF THESE FunctionX TYPES
