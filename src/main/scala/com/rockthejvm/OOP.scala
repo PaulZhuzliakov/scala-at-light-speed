@@ -11,19 +11,15 @@ object OOP extends App {
   val animal = new Animal
 
   //inheritance
-//  class Dog(name: String) extends Animal{ //cant reach name
+  //constructor argument are NOT fields. need to put val before the constructor argument
+  //class Dog(name: String) extends Animal{ //cant reach name
   class Dog(val name: String) extends Animal{ //constructor definition
 
   }
 
-  val dog = new Dog("Lessie ")
-
-//  constructor argument are NOT fields. need to put val before the constructor argument
-  dog.name
-
   //subtype polymorphism
-  val declaredAnimal: Animal = new Dog("Hachico")
-  declaredAnimal.eat() //the most derived method will be called at runtime
+  val dog: Animal = new Dog("Hachico")
+  dog.eat() //the most derived method will be called at runtime
 
   //abstract class
   abstract class WalkingAnimal {
@@ -41,7 +37,7 @@ object OOP extends App {
   }
 
   class Crocodile extends Animal with Carnivore with Philosopher {
-    override def eat(animal: Animal): Unit = println("i'm eating you  animal")
+    override def eat(animal: Animal): Unit = println("i'm eating you animal")
 
     override def ?!(thought: String): Unit = println(s"i was thinking a thought $thought")
   }
@@ -53,7 +49,7 @@ object OOP extends App {
 
   //operators in Scala a actually methods
   val basicMath = 1 + 2
-  val anotherBasicMath = 1.+(2) //equivale
+  val anotherBasicMath = 1.+(2) //equivalent
 
   //anonymous classes
   val dinosaur = new Carnivore {
@@ -73,7 +69,6 @@ object OOP extends App {
 
    object Animal { //companions. companion object with Animal class. could be also applied to traits
      // companions can access each other's private fields/methods
-     //
      val canLiveIndefinitely = false
    }
 
@@ -126,22 +121,3 @@ object OOP extends App {
 
   //Point #2 Scala is closest to OOP ideal
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
